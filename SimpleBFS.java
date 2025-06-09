@@ -22,7 +22,7 @@ public class SimpleBFS {
 		q.add(startroom);
 		v.add(startroom);
 		while(!q.isEmpty()) {
-			String croom=q.poll();//current room=croom
+			String croom=q.poll();
 			System.out.println("visited "+croom);
 			for(String n:house.get(croom)) {
 				if(!v.contains(n)) {
