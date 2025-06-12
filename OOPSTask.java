@@ -1,11 +1,10 @@
 package xyz;
 
 public class OOPSTask {
+
 	private String name;
-	private int rollNO;
+	private int rollnum;
 	private int marks;
-	
-	
 	
 	public String getName() {
 		return name;
@@ -13,36 +12,42 @@ public class OOPSTask {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getRollNO() {
-		return rollNO;
+	public int getRollnum() {
+		return rollnum;
 	}
-	public void setRollNO(int rollNO) {
-		this.rollNO = rollNO;
+	public void setRollnum(int rollnum) {
+		this.rollnum = rollnum;
 	}
 	public int getMarks() {
 		return marks;
 	}
 	public void setMarks(int marks) {
 		this.marks = marks;
-		
 	}
-	public String classResult() {
-		if(marks >=40) {
+	
+	public String checkResult() {
+		if(marks>=40) {
 			return "pass";
-		}else {
+		}
+		else {
 			return "fail";
 		}
 	}
-	public void displaydetails() {
-		System.out.println("Roll no"+""+getRollNo());
-		System.out.println("Name"+""+getName());
-		System.out.println("Marks"+""+getMarks());
-		System.out.println("result"+""+checkResult());
-
+	
+	public void displayDetails() {
+		System.out.println("Roll num: " + getRollnum());
+		System.out.println("Name: "+ getName());
+		System.out.println("marks: "+ getMarks());
+		System.out.println("Result: "+ checkResult());
 	}
-	public static void main(String[]args) {
-		OOPSTask s1=new OOPSTask();
+	public static void main(String[] args) {
+		OOPSTask opt = new OOPSTask();
+		opt.setMarks(45);
+		opt.setName("Touseef");
+		opt.setRollnum(3343);
 		
+		opt.displayDetails();
+
 	}
 
 }
