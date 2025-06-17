@@ -1,17 +1,14 @@
-package xyz;
-import java.util.*;
+package demo;
 
 public class RainUmbrella {
+	public static void main(String[] args) {
+		boolean isRaining = true;
+		//Scanner sc = new Scanner(System.in);
+		if(isRaining) {
+			System.out.println("Take an umbrella");
+		}else {
+			System.out.println("no neef of an umbrella");
+		}
+	}
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter either true or false:");
-        boolean isRaining = sc.nextBoolean();  // Use Scanner to read user input
-        if (isRaining) {
-            System.out.println("take the umbrella");
-        } else {
-            System.out.println("no need take umbrella");
-        }
-        sc.close();
-    }
 }

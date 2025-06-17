@@ -1,36 +1,49 @@
-package xyz;
-import java.util.*; 
+package demo;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+
 public class SimpleBFS {
-	
-	public static void main(String[] args) {
-		
-		Map<String,List<String>> house=new HashMap<>();
-		house.put("livingroom", Arrays.asList("kitchen","bedroom","studyroom"));
-		house.put("kitchen", Arrays.asList("bedroom"));
-		house.put("bedroom", Arrays.asList("balcony"));
-		house.put("studyroom",new ArrayList<String>());
-		house.put("bathroom",new ArrayList<String>());
-		house.put("balcony",new ArrayList<String>());
-		
-		System.out.println("Explore the house using bfs starting from living room.");
-		bfs(house,"livingroom");
-	}
-	public static void bfs(Map<String,List<String>> house,String startroom) {
-		
-		Queue<String> q=new LinkedList<String>();
-		Set<String> v=new HashSet<String>();
-		q.add(startroom);
-		v.add(startroom);
-		while(!q.isEmpty()) {
-			String croom=q.poll();
-			System.out.println("visited "+croom);
-			for(String n:house.get(croom)) {
-				if(!v.contains(n)) {
-					q.add(n);
-					v.add(n);
-				}
-			}
-		}
+
+	    public static void main(String[] args) {
+	        Map<String, List<String>> house = new HashMap<>();
+
+	        house.put("Living Room", Arrays.asList("Kitchen", "Bedroom", "Study Room"));
+	        house.put("Kitchen", Arrays.asList("Bathroom"));
+	        house.put("Study Room", new ArrayList<>());
+	        house.put("Bathroom", new ArrayList<>());
+	        house.put("Bedroom", new ArrayList<>()); 
+	        house.put("Balcony", new ArrayList<>()); 
+
+	        System.out.println("Exploring the house using BFS starting from Living Room:");											
+	        bfs(house, "Living Room");
+	    }
+
+	    public static void bfs(Map<String, List<String>> house, String startRoom) {
+	        Queue<String> queue = new LinkedList<>();
+	        Set<String> visited = new HashSet<>();
+
+	        queue.add(startRoom);
+	        visited.add(startRoom);
+
+	        while (!queue.isEmpty()) {
+	            String currentRoom = queue.poll();
+	            System.out.println("Visited keerthi"  +  currentRoom);
+
+	            for (String neighbor : house.getOrDefault(currentRoom, new ArrayList<>())) {
+	                if (!visited.contains(neighbor)) {
+	                    queue.add(neighbor);
+	                    visited.add(neighbor);
+	                }
+	            }
+	        }
+	    }
 	}
 
-}
