@@ -8,7 +8,7 @@ public class AdvancedGraph {
 
         void addEdge(int u, int v) {
             adjList.computeIfAbsent(u, k -> new ArrayList<>()).add(v);
-            adjList.computeIfAbsent(v, k -> new ArrayList<>()).add(u); // for undirected graph
+            adjList.computeIfAbsent(v, k -> new ArrayList<>()).add(u); 
         }
 
         void printGraph() {
